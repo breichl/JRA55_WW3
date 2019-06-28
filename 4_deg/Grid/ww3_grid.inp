@@ -1,0 +1,41 @@
+$ WAVEWATCH III Grid preprocessor input file
+$ ------------------------------------------
+  'Global Spherical Grid '
+$
+$   1.1 0.03679 25 24 0.
+    1.1 0.04118 25 24 0.5
+$
+$ Set model flags ---------------------------------------------------- $
+$  - FLDRY         Dry run (input/output only, no calculation).
+$  - FLCX, FLCY    Activate X and Y component of propagation.
+$  - FLCTH, FLCK   Activate direction and wavenumber shifts.
+$  - FLSOU         Activate source terms.
+$
+  F T T T F T
+$ F T T F F F
+$ geogr. CFL time step is the 2nd one....
+$ note that PR1 shows instability before PR3
+  1800.  600.0  600.  100.
+$
+$ &PRO2 DTIME = 0. /
+$ &PRO2 DTIME = 2777. /
+$ &PRO3 WDTHCG = 0., WDTHTH = 0. /
+$ &PRO4 RNFAC = 0., RSFAC = 0. /
+  &OUTS USSP = 1, IUSSP = 3,
+  STK_WN = 0.04, 0.1102, 0.3305 /
+  &MISC CICE0 = 0.25, CICEN = 0.75, FLAGTR = 4 /
+END OF NAMELISTS
+$
+   'RECT'  T 'SMPL'
+  90      45
+  4.00    4.00     1.00
+  2.000         -88.0000         1.00
+$ Bottom Bathymetry
+-0.10   2.50  40  0.001000  1  1 '(....)'  NAME  'glo_4deg.depth_ascii'
+$ Sub-grid information
+50  0.010000  1  1  '(....)'  NAME  'glo_4deg.obstr_lev1'
+$ Mask Information
+60  1  1  '(....)'  NAME  'glo_4deg.mask85_ascii'
+$
+  0. 0. 0. 0.  0
+$

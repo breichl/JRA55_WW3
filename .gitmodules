@@ -1,0 +1,6 @@
+[submodule "src/WW3"]
+	path = src/WW3
+	url = https://github.com/breichl/WW3.git
+[submodule "src/gridgen"]
+	path = src/gridgen
+	url = https://github.com/breichl/gridgen.git
