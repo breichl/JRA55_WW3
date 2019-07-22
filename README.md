@@ -49,9 +49,6 @@ rm ww3_prnc.inp
 
 7. Prepare the ice input files.
 
-- comment the 4 wind related lines out in ww3_prnc.inp
-- uncomment the 4 ice related lines
-
 >cp ww3_prnc_ice.inp ww3_prnc.inp  
 ../../src/WW3/model/exe/ww3_prnc  
 (Or, on Gaea) srun -n1 ../../src/WW3/model/exe/ww3_prnc  
