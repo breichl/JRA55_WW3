@@ -30,8 +30,11 @@
    - Change into the gridgen folder and download the raw grids:
    
       >cd src/gridgen/reference_data
+      
       >wget ftp://polar.ncep.noaa.gov/tempor/ww3ftp/gridgen_addit.tgz
+      
       >tar -xvf gridgen_addit.tgz
+      
       >cd ../../..
    
    - Change into the 4 degree example Grid folder
@@ -43,11 +46,13 @@
    - Load matlab environment (if necessary) and open matlab with no gui
    
       >(On Gaea) module load matlab/R2017a  
+      
       > matlab -nodesktop
 
    - Run the bathymetry script
 
       >run create_4_deg_global.m  
+      
       Note: This will create figures near the end unless you comment them out in the matlab script.
 
    - Run the mask mod script (This assumes you are running a global lat-lon grid, which has a singularity at the North Pole. The existing grid masks out all points north of 85N to eliminate the singularity.)
@@ -59,7 +64,9 @@
 5. Run the ww3_grid preprocessor
 
    >cd 4_deg/Grid
+   
    >../../src/WW3/model/exe/ww3_grid
+   
    >cd ../..
    
    *May need to run executable in different manner depending on MPI set-up and system.  You could also add the WW3 executables into your path, if you'd like to run without providing the full relative (or absolute) path of the executables.*
@@ -70,19 +77,29 @@
    - Note 2: On Gaea this needs to be done from an interactive session.
 
    >cd 4_deg/Input  
+   
    >cp ww3_prnc_wnd.inp ww3_prnc.inp  
+   
    >../../src/WW3/model/exe/ww3_prnc  
+   
    >(Or on interactive slurm session) srun -n1 ../../src/WW3/model/exe/ww3_prnc  
+   
    >rm ww3_prnc.inp  
+   
    >cd ../..
 
 7. Prepare the ice input files.
 
    >cd 4_deg/Input  
+   
    >cp ww3_prnc_ice.inp ww3_prnc.inp  
+   
    >../../src/WW3/model/exe/ww3_prnc  
+   
    >(Or on interactive slurm session) srun -n1 ../../src/WW3/model/exe/ww3_prnc  
+   
    >rm ww3_prnc.inp 
+   
    >cd ../.. 
 
 8. Run the model
@@ -96,6 +113,7 @@
 9. Postprocessing
 
    >../../src/WW3/model/exe/ww3_ounf  
+   
    >(Or on an interactive slurm session) srun -n1 ../../src/WW3/model/exe/ww3_ounf  
 
 
