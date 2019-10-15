@@ -38,7 +38,7 @@ Note: This will create figures near the end unless you comment them out in the m
 
 6. Prepare the wind input files. 
 
-- Note 1: The Datasets folder must be added to the root directory of the repository.  These files are too big too include via github.  Other wind products could easily be substituted in at this point.
+- Note 1: The Datasets folder must be added to the root directory of the repository.  These files are too big to include via github.  Other wind products could easily be substituted in at this point.
 - Note 2: On Gaea this needs to be done from an interactive session.
 
 >cd ../Input  
